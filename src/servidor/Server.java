@@ -15,12 +15,13 @@ public class Server {
 	
 	public static void main(String[] args) throws RemoteException, AlreadyBoundException{
 		
-		Servico servico = new Servico();
 		
+		Servico servico = new Servico();		
 		Registry registro = LocateRegistry.createRegistry(1313);
-		System.out.println("registro criado");
+		System.out.println("serviço fibonnaci disponibilizado");		
+		registro.bind("servico", servico);
 		
-		registro.bind("fibonacci", servico);
+				
 	}
 
 }
